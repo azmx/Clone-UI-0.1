@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter_application_1/login_page.dart';
+import 'package:flutter_application_1/widget/customButton.dart';
+import 'package:flutter_application_1/widget/custumTextField.dart';
 
 class RegistPage extends StatelessWidget {
   @override
@@ -66,23 +68,18 @@ class RegistPage extends StatelessWidget {
                       height: 20,
                     ),
                     SizedBox(height: 25.0),
-                    Container(
-                      margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          labelText: 'Email atau Telepon',
-                        ),
-                      ),
-                    ),
+                    Custumtextfield(
+                        labelText: 'Email atau Teliiiiepon',
+                        obscureText: false,
+                        hasSuffixIcon: false,
+                        suffixIconData: null),
                     SizedBox(height: 16.0),
-                    ElevatedButton(
-                      child: Text('Lanjutkan'),
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                          minimumSize: Size(double.infinity, 50),
-                          backgroundColor: Color.fromRGBO(2, 61, 160, 1),
-                          foregroundColor: Colors.white),
-                    ),
+                    Custombutton(
+                        TextButton: 'Lanjutkan',
+                        backgroundColor: Color.fromRGBO(1, 59, 159, 1),
+                        onPressed: () {},
+                        iconLeft: null,
+                        foregroundColor: Colors.white),
                     Row(
                       children: [
                         Expanded(
@@ -105,37 +102,19 @@ class RegistPage extends StatelessWidget {
                                 ))),
                       ],
                     ),
-                    ElevatedButton.icon(
-                      icon: Image.asset(
-                        'assets/images/google.png',
-                        height: 30,
-                        fit: BoxFit.cover,
-                      ),
-                      label: Text('Lanjutkan dengan Google'),
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        side: BorderSide(color: Color.fromARGB(255, 0, 0, 0)),
+                    Custombutton(
+                        TextButton: 'Login dengan Google',
                         backgroundColor: Colors.white,
-                        foregroundColor: Colors.black,
-                        minimumSize: Size(double.infinity, 50),
-                      ),
-                    ),
+                        onPressed: () {},
+                        iconLeft: 'assets/images/google.png',
+                        foregroundColor: Colors.black),
                     SizedBox(height: 16.0),
-                    ElevatedButton.icon(
-                      icon: Image.asset(
-                        'assets/images/facebook.png',
-                        height: 30,
-                        fit: BoxFit.cover,
-                      ),
-                      label: Text('Lanjutkan dengan Facebook'),
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        side: BorderSide(color: Color.fromARGB(255, 0, 0, 0)),
+                    Custombutton(
+                        TextButton: 'Login dengan Facebook',
                         backgroundColor: Colors.white,
-                        foregroundColor: Colors.black,
-                        minimumSize: Size(double.infinity, 50),
-                      ),
-                    ),
+                        onPressed: () {},
+                        iconLeft: 'assets/images/facebook.png',
+                        foregroundColor: Colors.black),
                     Spacer(),
                   ],
                 ),

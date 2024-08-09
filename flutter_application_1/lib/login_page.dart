@@ -2,6 +2,8 @@
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/widget/customButton.dart';
+import 'package:flutter_application_1/widget/custumTextField.dart';
 import 'regist.dart';
 
 class LoginPage extends StatefulWidget {
@@ -38,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Center(
             child: Container(
               child: Padding(
-                padding: EdgeInsets.all(5.0),
+                padding: EdgeInsets.all(16.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -78,53 +80,27 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(
                       height: 20,
                     ),
-                    ElevatedButton.icon(
-                      icon: Image.asset(
-                        'assets/images/google.png',
-                        height: 30,
-                        fit: BoxFit.cover,
-                      ),
-                      label: Text('Login dengan Google'),
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        side: BorderSide(color: Color.fromARGB(255, 0, 0, 0)),
+                    Custombutton(
+                        TextButton: 'Login dengan Google',
                         backgroundColor: Colors.white,
-                        foregroundColor: Colors.black,
-                        minimumSize: Size(double.infinity, 50),
-                      ),
-                    ),
+                        onPressed: () {},
+                        iconLeft: 'assets/images/google.png',
+                        foregroundColor: Colors.black),
                     SizedBox(height: 16.0),
-                    ElevatedButton.icon(
-                      icon: Image.asset(
-                        'assets/images/apple.png',
-                        height: 37,
-                        fit: BoxFit.cover,
-                      ),
-                      label: Text('Login dengan Apple'),
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        side: BorderSide(color: Color.fromARGB(255, 0, 0, 0)),
+                    Custombutton(
+                        TextButton: 'Login dengan Apple',
                         backgroundColor: Colors.white,
-                        foregroundColor: Colors.black,
-                        minimumSize: Size(double.infinity, 50),
-                      ),
-                    ),
+                        onPressed: () {},
+                        iconLeft: 'assets/images/apple.png',
+                        height: 32,
+                        foregroundColor: Colors.black),
                     SizedBox(height: 16.0),
-                    ElevatedButton.icon(
-                      icon: Image.asset(
-                        'assets/images/facebook.png',
-                        height: 30,
-                        fit: BoxFit.cover,
-                      ),
-                      label: Text('Login dengan Facebook'),
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        side: BorderSide(color: Color.fromARGB(255, 0, 0, 0)),
+                    Custombutton(
+                        TextButton: 'Login dengan Facebook',
                         backgroundColor: Colors.white,
-                        foregroundColor: Colors.black,
-                        minimumSize: Size(double.infinity, 50),
-                      ),
-                    ),
+                        onPressed: () {},
+                        iconLeft: 'assets/images/facebook.png',
+                        foregroundColor: Colors.black),
                     SizedBox(height: 25.0),
                     Row(
                       children: [
@@ -148,32 +124,20 @@ class _LoginPageState extends State<LoginPage> {
                                 ))),
                       ],
                     ),
-                    Container(
-                      margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          labelText: 'Email atau Telepon',
-                        ),
-                      ),
-                    ),
+                    Custumtextfield(
+                        labelText: 'Email atau Telepon',
+                        obscureText: false,
+                        hasSuffixIcon: false,
+                        suffixIconData: null),
                     SizedBox(height: 16.0),
-                    Container(
-                      margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          labelText: 'Kata Sandi',
-                          suffixIcon: IconButton(
-                            icon: Icon(
-                              _obscureText
-                                  ? Icons.visibility
-                                  : Icons.visibility_off,
-                            ),
-                            onPressed: _togglePasswordVisibility,
-                          ),
-                        ),
+                    Custumtextfield(
+                        labelText: 'Kata Sandi',
                         obscureText: _obscureText,
-                      ),
-                    ),
+                        hasSuffixIcon: true,
+                        suffixIconData: _obscureText
+                            ? Icons.visibility
+                            : Icons.visibility_off,
+                        onSuffixIconPressed: _togglePasswordVisibility),
                     SizedBox(height: 16.0),
                     Row(
                       children: <Widget>[
@@ -217,14 +181,12 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     SizedBox(height: 24.0),
-                    ElevatedButton(
-                      child: Text('Lanjutkan'),
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                          minimumSize: Size(double.infinity, 50),
-                          backgroundColor: Color.fromRGBO(2, 61, 160, 1),
-                          foregroundColor: Colors.white),
-                    ),
+                    Custombutton(
+                        TextButton: 'Lanjutkan',
+                        backgroundColor: Color.fromRGBO(1, 59, 159, 1),
+                        onPressed: () {},
+                        iconLeft: null,
+                        foregroundColor: Colors.white),
                     Spacer(),
                   ],
                 ),
