@@ -18,15 +18,16 @@ class Custumtextfield extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
+      margin: EdgeInsets.fromLTRB(10, 0, 10, 0), //buat jadi final
       child: TextField(
         decoration: InputDecoration(
           labelText: labelText,
-          suffixIcon: hasSuffixIcon ? IconButton(
+          suffixIcon: hasSuffixIcon
+              ? IconButton(
                   icon: Icon(suffixIconData),
                   onPressed: onSuffixIconPressed,
                 )
-                :null,
+              : null,
         ),
         obscureText: obscureText,
       ),

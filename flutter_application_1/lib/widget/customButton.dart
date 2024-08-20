@@ -6,7 +6,7 @@ class Custombutton extends StatelessWidget {
   final VoidCallback onPressed;
   final String? iconLeft;
   final Color foregroundColor;
-  final dynamic height;
+  final double height;
 
   const Custombutton(
       {super.key,
@@ -27,10 +27,10 @@ class Custombutton extends StatelessWidget {
               fit: BoxFit.cover,
             )
           : const SizedBox.shrink(),
-      label: Text(this.TextButton),
+      label: Text(TextButton),
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        side: BorderSide(color: Color.fromARGB(255, 0, 0, 0)),
+        side: BorderSide(color: Colors.black),
         backgroundColor: backgroundColor,
         foregroundColor: foregroundColor,
         minimumSize: Size(double.infinity, 50),
